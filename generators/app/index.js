@@ -4,35 +4,25 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 
 module.exports = class extends Generator {
-  prompting() {
-    // Have Yeoman greet the user.
-    this.log(
-      yosay(`Welcome to the tiptop ${chalk.red('generator-puppy-plugins')} generator!`)
-    );
-
+  async prompting () {
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
+        type: 'input',
+        name: 'name',
+        message: 'Entre your plugins name',
+        default: 'dog-is-cat'
       }
     ];
 
-    return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
-    });
+    const projectName = this.prompt(prompts);
+    this.dest = this.destinationPath(projectName);
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
+      
   }
 
-  install() {
-    this.installDependencies();
+  end() {
+
   }
 };
