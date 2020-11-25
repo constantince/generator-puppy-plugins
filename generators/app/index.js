@@ -14,12 +14,25 @@ module.exports = class extends Generator {
       }
     ];
 
-    const projectName = this.prompt(prompts);
-    this.dest = this.destinationPath(projectName);
+    this.answer = await this.prompt(prompts);
+    this.dest = this.destinationPath(this.answer.name);
   }
 
   writing() {
-      
+      this.fs.copyTpl(
+        this.templatePath(),
+        this.dest,
+        {project: this.answer.name},
+        null,
+        {
+          globOptions: { dot: true }
+        }
+      )
+  }
+
+  install() {
+    process.chdir(this.answer.name);
+    this.npmInstall();
   }
 
   end() {

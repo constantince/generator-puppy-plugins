@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import { eslint } from 'rollup-plugin-eslint';
 import { uglify } from 'rollup-plugin-uglify';
 export default {
-  input: "src/index.",
+  input: "src/index.ts",
   output: [{
      dir: "lib/",
      format: 'cjs',
