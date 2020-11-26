@@ -1,12 +1,12 @@
 {
   "name": "generator-puppy-plugins",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "create puppy-cli's plugins",
   "homepage": "",
   "author": {
     "name": "chenyan",
     "email": "alberteinstein007@126.com",
-    "url": ""
+    "url": "https://github.com/constantince/generator-puppy-plugins.git"
   },
   "files": [
     "generators"

@@ -1,6 +1,4 @@
 test/
 tsconfig.json
 lib/
-types/index.js
-types/index.ts
 index.ts
