@@ -10,18 +10,17 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'name',
         message: 'Entre your plugins name',
-        default: 'dog-is-cat'
+        default: 'puppy-plugins-mine'
       }
     ];
 
     this.answer = await this.prompt(prompts);
-    this.dest = this.destinationPath(this.answer.name);
   }
 
   writing() {
       this.fs.copyTpl(
         this.templatePath(),
-        this.dest,
+        this.destinationPath(this.answer.name),
         {project: this.answer.name},
         null,
         {
