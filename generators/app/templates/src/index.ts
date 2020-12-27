@@ -1,22 +1,31 @@
-type Cms = {
-    [k in 'abbreviation' | 'params' | 'description']: string
-}
-type CmdDesctions = {
-    name: string
-} & Partial<Cms>;
+type Cms = { [k in 'name' | 'abbr' | 'desc']: string };
 
-//write your cmd configrations here:
-const CmdDesctions:CmdDesctions = {
-    name: '', //command name 
-    abbreviation: '', //first params abbreviation
-    params: '' // fisrt params name
+type CmdDesctions = {
+    name: string,
+    type: string,
+    description: string,
+    params: Cms[]
 }
-const happy = (register: any) => {
-    console.log("happy plugins loaded...");
-    register(CmdDesctions, (log: string) => {
-        //write or import modules here
+
+// write your cmd configrations here:
+const CmdDesctions: CmdDesctions = {
+    name: 'hello', // command name
+    type: 'custoom', // plugins type default custom
+    description: 'xxxxxx', // command description
+    params: [{ // commander paramters
+        "name": "--project", //commander name
+        "abbr": "-p", // commander abbreviation
+        "desc": "project name" // desction for cmd
+    }], // params name
+};
+
+
+const happy = (register: any): void => {
+    console.log('happy plugins loaded...');
+    register(CmdDesctions, (log: Cms['name'][]) => {
+        // write or import modules or logic here
         console.log(log);
-    }, "log your logger");
-}
+    }, 'write your plugins descriptions or specification here');
+};
 
 module.exports = happy;

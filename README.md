@@ -1,38 +1,16 @@
-# generator-puppy-plugins [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> create puppy-cli&#39;s plugins
 
-## Installation
+<font size=2>
 
-First, install [Yeoman](http://yeoman.io) and generator-puppy-plugins using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+### plugins 说明文档
 
-```bash
-npm install -g yo
-npm install -g generator-puppy-plugins
-```
-
-Then generate your new project:
+generator-puppy-plugins插件为快速创建npm标准模块。集中至puppy-cli中，接受插件命令，具体使用如下：
 
 ```bash
-yo puppy-plugins
+puppy create plugins
 ```
+使用该命令可以生成插件模板，并且启动编译工具对代码进行编译。编写完代码后按照规范测试后发布到私有的npm库中即可。发布流程请见相关文档。
 
-## Getting To Know Yeoman
+#### 注意事项
+发布的插件请务必使用规范命名，如果puppy-plugins-xxxx。
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
-
-## License
-
-Apache-2.0 © [chenyan]()
-
-
-[npm-image]: https://badge.fury.io/js/generator-puppy-plugins.svg
-[npm-url]: https://npmjs.org/package/generator-puppy-plugins
-[travis-image]: https://travis-ci.com/constantince/generator-puppy-plugins.svg?branch=master
-[travis-url]: https://travis-ci.com/constantince/generator-puppy-plugins
-[daviddm-image]: https://david-dm.org/constantince/generator-puppy-plugins.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/constantince/generator-puppy-plugins
-[coveralls-image]: https://coveralls.io/repos/constantince/generator-puppy-plugins/badge.svg
-[coveralls-url]: https://coveralls.io/r/constantince/generator-puppy-plugins
+<font>
